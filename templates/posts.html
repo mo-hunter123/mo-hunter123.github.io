@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+<title>posts page</title>
+
+{% endblock head %}
+
+{% block body %}
+
+    {% for post in postss %}
+
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+
+        {% if post.author %}
+            <p>By : {{ post.author }}</p>
+
+        {% else %}
+            <p>By : Anonymous</p>
+        {% endif %}
+
+        <p>{{ post.date }}</p>
+        <button type="button" class="btn btn-secondary">Delete Post</button><br>
+        <button type="button" class="btn btn-secondary">update Post</button><br>
+        <h2>--------------------</h2><br>
+    
+    {% endfor %}
+
+    
+
+{% endblock body %}
